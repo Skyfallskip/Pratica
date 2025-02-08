@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <title>Estoque</title>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            <a href="/" class="logo">Armazem</a>
+            <a href="/estoque" class="active">Estoque</a> 
+            <a href="/fornecedores">Fornecedores</a> 
+            <a href="/registro">Registro</a>
+       
+    </nav>
+    </header>
+
+    <section>
+        <h1>Estoque</h1>
+    </section>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade Total</th>
+                    <th>fornecedor</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in estoque %}
+                <tr>
+                    <td><a href="{% url 'detalhes_produto' produto.id %}">{{ produto.nome }}</a></td>
+                    <td>{{ produto.quantidade_total }}</td>
+                    <td>{{ produto.fornecedor }}</td>
+                    <td><a href="{% url 'estoque:editar_estoque' item.id %}" class="CRUD">Editar</a></td>
+                    <td><a href="{% url 'estoque:deletar_estoque' item.id %}" class="CRUD" >Deletar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p> Feito por Mateus T. Lirio</p>
+    </footer>
+</body>
+</html>

@@ -9,20 +9,13 @@ header {
     padding: 10px 0;
 }
 
-nav ul {
+nav {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    list-style-type: none;
     padding: 10px 20px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -30,7 +23,7 @@ nav ul li a {
     font-size: 20px;
 }
 
-nav ul li a:hover {
+nav a:hover {
     background-color: #575757;
     border-radius: 5px;
 }
@@ -45,7 +38,18 @@ nav ul li a:hover {
 
 section {
     margin-top: 30px;
-    background-image: url('section_background.jpg');
+    padding: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.home {
+    margin-top: 30px;
+    background-image: url('/static/images/section_background.jpg');
     background-size: contain;
     background-position: center;
     padding: 20px;
@@ -55,6 +59,10 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+section.table {
+    background: none;
 }
 
 main {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <title>
+        {% block title %}
+             Armazem
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <nav>
+            
+                <a href="/" class="logo">Armazem</a>
+                <a href="/estoque">Estoque</a> 
+                <a href="/fornecedores">Fornecedores</a> 
+                <a href="/registro">Registro</a>
+           
+        </nav>
+    </header>
+
+    <section class="home">
+        <h1>
+            {% block heading %}
+            {% endblock %}
+        </h1>
+    </section>
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+{% block footer %}
+    <footer>
+        <p> Feito por Mateus T. Lirio</p>
+    </footer>
+{% endblock %}
+</body>
+</html>

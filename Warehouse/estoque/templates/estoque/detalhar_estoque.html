@@ -1,0 +1,31 @@
+{%extends layout.html%}
+
+{% block title %}
+Detalhes do Produto
+{% endblock %}
+
+{% block content %}
+<h1>{{ produto.nome }}</h1>
+<p>Fornecedor: {{ produto.fornecedor }}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Número do Lote</th>
+            <th>Quantidade</th>
+            <th>Data de Entrada</th>
+            <th>Data de Validade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lote in lotes %}
+        <tr>
+            <td>{{ lote.numero_lote }}</td>
+            <td>{{ lote.quantidade }}</td>
+            <td>{{ lote.data_entrada }}</td>
+            <td>{{ lote.data_validade }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
