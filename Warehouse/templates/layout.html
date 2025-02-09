@@ -4,43 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <script src="{% static 'js/main.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="favicon" href="{% static 'img/favicon.ico' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    
     <title>
         {% block title %}
-             Armazem
         {% endblock %}
     </title>
 </head>
 <body>
+
+
+    <nav>
+        <h1>Armazem</h1>
+        <div class="menu-items">
+            <a href="{% url 'inicio' %}" class="active">Inicio</a>
+            <a href="#">Estoque</a>
+            <a href="#">Fornecedores</a> 
+            <a href="#">Historico</a>
+        </div>
+    </nav>
+
     <header>
-        <nav>
-            
-                <a href="/" class="logo">Armazem</a>
-                <a href="/estoque">Estoque</a> 
-                <a href="/fornecedores">Fornecedores</a> 
-                <a href="/registro">Registro</a>
-           
-        </nav>
+     {% block header %}
+     {% endblock %}
     </header>
 
-    <section class="home">
-        <h1>
-            {% block heading %}
-            {% endblock %}
-        </h1>
-    </section>
-
-
     <main>
-        {% block content %}
-        {% endblock %}
+     {% block main %}
+     {% endblock %}
     </main>
 
-{% block footer %}
+    <section class="section1"> 
+        {% block section1 %}
+        {% endblock %}
+    </section>
+
+    <table>
+        {% block table %}
+        {% endblock %}
+    </table>
+
     <footer>
-        <p> Feito por Mateus T. Lirio</p>
+        Desenvolvido por Mateus T. Lirio | Versão 0.1
     </footer>
-{% endblock %}
+
 </body>
 </html>

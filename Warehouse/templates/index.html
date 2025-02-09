@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Armazem
+{% endblock %}
+
+{% block main %}
+    <p>Seja bem vindo ao sistema de controle de estoque</p>
+{% endblock %}
+
+{% block section1 %}
+   <p>Nesse site voçe pode simular o controle de um armazem.</p>
+   <p>Aqui esta uma lista de funcionalidades:</p>
+   <br>
+   <ul>
+        <li>CRUD de produtos e fornecedores (adicionar,remover,modificar);</li>
+        <li>Historico de movimentação de produtos;</li>
+        <li>Ver detalhes de um produto. (quantidade, fornecedor, preço, lote, validade);</li>
+        <li>Ver detalhes de um fornecedor. (nome, cnpj, telefone, email);</li>
+        <li>Diferentes niveis de acesso;</li>
+    </ul>
+{% endblock %}
